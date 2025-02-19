@@ -1,7 +1,7 @@
 import './App.scss';
 import SelectName from './components/SelectName';
 import SelectAge from './components/SelectAge';
-import Droppdown from './components/SelectDropdown';
+import Dropdown from './components/SelectDropdown';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
      <SelectName />
      <SelectAge/>
-     <Droppdown/>
+     <Dropdown/>
 
     </>
   )
