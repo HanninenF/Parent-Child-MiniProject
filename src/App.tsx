@@ -3,6 +3,7 @@ import SelectName from './components/SelectName';
 import SelectAge from './components/SelectAge';
 import Dropdown from './components/SelectDropdown';
 import SelectColor from './components/SelectColor';
+import SelectType from './components/SelectType';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
      <SelectAge/>
      <Dropdown/>
      <SelectColor/>
+     <SelectType/>
 
     </>
   )
