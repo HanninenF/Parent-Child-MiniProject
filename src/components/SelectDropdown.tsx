@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from './Buttons/Button';
 
 export default function Dropdown() {
     const [selectedValue, setSelectedValue] = useState('');
@@ -22,7 +23,7 @@ export default function Dropdown() {
                 <option value="Male">Male</option>
                 <option value="Transformer">Transformer</option>
             </select>
-            {!isSubmitted ? (<button onClick={handleSubmit}>Submit</button>) : (<button onClick={handleEdit}>Edit</button>)}
+            {!isSubmitted ? (<Button title="Submit" handleClick={handleSubmit}/>) : (<Button title="Edit" handleClick={handleEdit}/>)}
             {isSubmitted && <p>You selected: {selectedValue}</p>}
         </div>
     );
