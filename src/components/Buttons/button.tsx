@@ -8,5 +8,5 @@ type ButtonProps = {
 export default function Button ({title, handleClick}: ButtonProps) {
     return (
         <button onClick={handleClick} className="Button">{title}</button>
-    )
+    );
 }
