@@ -4,8 +4,7 @@ import Button from "../Buttons/button";
 
 type Student = {
     course: string;
-}
-
+};
 
 export default function StudentSelection() {
     const [isStudent, setIsStudent] = useState(false);
@@ -18,10 +17,20 @@ export default function StudentSelection() {
         setSelectedCourse(""); 
         setIsEditing(true); // = Visar dropdown direkt
     };
-    
 
-    const handleEdit = () => { setIsEditing(true)};
-    const handleDelete = () =>{setSelectedCourse(""); setIsStudent(false); setIsEditing(false);};
+    const handleEdit = () => { setIsEditing(true) };
+    const handleDelete = () => {
+        setSelectedCourse(""); 
+        setIsStudent(false); 
+        setIsEditing(false);
+    };
+
+    const handleSave = () => {
+        if (selectedCourse) {
+            setStudents([...students, { course: selectedCourse }]);
+            setIsEditing(false);
+        }
+    };
 
     const courses = ["Frontend Dev", "Backend Dev", "Database", "UI-Designer", "Other"];
 
@@ -48,12 +57,23 @@ export default function StudentSelection() {
 
                     <div className="buttonContainer">
                         {isEditing ? (
-                            <Button title="Save" handleClick={() => setIsEditing(false)} />
+                            <Button title="Save" handleClick={handleSave} />
                         ) : (
                             <Button title="Edit" handleClick={handleEdit} />
                         )}
                         <Button title="Delete" handleClick={handleDelete} />
                     </div>
+                </div>
+            )}
+
+            {students.length > 0 && (
+                <div className="studentsList">
+                    <h2>Students List</h2>
+                    <ul>
+                        {students.map((student, index) => (
+                            <li key={index}>{student.course}</li>
+                        ))}
+                    </ul>
                 </div>
             )}
         </div>
