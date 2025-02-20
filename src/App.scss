@@ -1,9 +1,11 @@
-#root {
+div#root {
   margin-top: 20px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  border: 5px solid rgb(241, 52, 213);
+  $border-color: rgb(241, 52, 213); // Sass-variabel för kantfärg
+  border: 5px solid $border-color;
   box-shadow: 0 0 20px 10px rgb(236, 33, 165), 0 0 30px 20px rgb(239, 56, 211), 0 0 40px 30px rgb(241, 109, 206);
 }
+

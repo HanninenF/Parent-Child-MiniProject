@@ -1,19 +1,11 @@
 import './App.scss';
-import SelectName from './components/SelectName';
-import SelectAge from './components/SelectAge';
-import Dropdown from './components/SelectDropdown';
-import SelectColor from './components/SelectColor';
-import SelectType from './components/SelectType';
+import UserBox from './components/UserComponents/UserBox/UserBox';
 
 
 function App() {
   return (
     <>
-     <SelectName />
-     <SelectAge/>
-     <Dropdown/>
-     <SelectColor/>
-     <SelectType/>
+    <UserBox/>
 
     </>
   )
