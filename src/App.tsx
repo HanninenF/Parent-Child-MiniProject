@@ -1,11 +1,13 @@
 import './App.scss';
 import UserBox from './components/UserComponents/UserBox/UserBox';
+import StudentSelection from "./components/StudentSelection/StudentSelection";
 
 
 function App() {
   return (
     <>
     <UserBox/>
+    <StudentSelection/>
 
     </>
   )
@@ -14,6 +16,3 @@ function App() {
 export default App
 
 
-/*
-
-*/
