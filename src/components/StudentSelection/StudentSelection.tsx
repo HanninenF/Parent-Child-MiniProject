@@ -2,6 +2,7 @@ import "./StudentSelection.scss";
 import { useState } from 'react';
 import Button from "../Buttons/button";
 
+
 type Student = {
     course: string;
 };
