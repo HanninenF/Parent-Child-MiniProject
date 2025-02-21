@@ -15,32 +15,23 @@ export default function StudentSelection() {
     const [isEditing, setIsEditing] = useState(false);
     const [isNotStudentEditing, setIsNotStudentEditing] = useState(false);
 
-    const handleStudentCheckboxChange = () => {
-        if (!isStudent) {
+    const handleCheckboxChange = (type: 'student' | 'notStudent') => {
+        if (type === 'student') {
             setIsStudent(true);
             setIsNotStudent(false);
             setIsNotStudentEditing(false);
+            setIsEditing(true);
         } else {
-            setIsStudent(false);
-        }
-        setSelectedCourse("");
-        setIsEditing(true);
-    };
-
-    const handleNotStudentCheckboxChange = () => {
-        if (!isNotStudent) {
             setIsNotStudent(true);
             setIsStudent(false);
             setIsEditing(false);
-        } else {
-            setIsNotStudent(false);
+            setIsNotStudentEditing(true);
         }
         setSelectedCourse("");
-        setIsNotStudentEditing(true);
     };
 
-    const handleEdit = () => { setIsEditing(true); };
-    const handleNotStudentEdit = () => { setIsNotStudentEditing(true); };
+    const handleEdit = () => setIsEditing(true);
+    const handleNotStudentEdit = () => setIsNotStudentEditing(true);
     
     const handleDelete = () => {
         setSelectedCourse("");
@@ -51,9 +42,7 @@ export default function StudentSelection() {
         setNotStudentInput("");
     };
 
-    const handleDeleteAll = () => {
-        setStudents([]);
-    };
+    const handleDeleteAll = () => setStudents([]);
 
     const handleSave = () => {
         if (selectedCourse) {
@@ -71,15 +60,13 @@ export default function StudentSelection() {
         <div className="studentSelection">
             <div className="card">
                 <label>
-                    <input type="checkbox" checked={isStudent} onChange={handleStudentCheckboxChange} />
+                    <input type="checkbox" checked={isStudent} onChange={() => handleCheckboxChange('student')} />
                     Are you a student?
                 </label>
-                {!isStudent && (
-                    <label>
-                        <input type="checkbox" checked={isNotStudent} onChange={handleNotStudentCheckboxChange} />
-                        Not a student
-                    </label>
-                )}
+                <label>
+                    <input type="checkbox" checked={isNotStudent} onChange={() => handleCheckboxChange('notStudent')} />
+                    Not a student
+                </label>
 
                 {isStudent && (
                     <div className="dropdownContainer">
