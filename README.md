@@ -6,7 +6,7 @@
 <li>SCSS for styling</li>
 </ul>
 <hr/>
-<p>Installation & Setup</p><br/>
+<p><em>Installation & Setup</em></p><br/>
 <p>Clone the repository:</p><br/>
 
 <pre><code>git clone https://github.com/Mejlisson/Parent-Child-MiniProject.git
