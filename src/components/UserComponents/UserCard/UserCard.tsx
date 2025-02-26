@@ -1,7 +1,8 @@
 import "./UserCard.scss";
 import { User } from "../UserBox/UserBox";
 import Button from "../../Buttons/button";
-/* import img from "./img.gif"; */
+
+import img from "./img.gif";
 
 interface UserCardProps extends User {
   onDelete: (index: number) => void; //onDelete som en funktion från UserCard
@@ -43,6 +44,7 @@ export default function UserCard({
         </>
       ) : (
         <>
+          <img src={img} alt="User Avatar" />
           <p>
             <strong>Name:</strong> {user.name}
           </p>
